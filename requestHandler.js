@@ -1,7 +1,7 @@
 var request = require('request');
 /*var db = require('./server/models')*/
 var practice ={doctor:99768,office:106424};
-var headers = {Authorization:"Bearer jtXL7GJMi3peDtpgBw9qF3AEZMalg2"};
+
 var auth  = {ready:false, headers:{Authorization:''},validTo:0};
 var urls = {
   appointments:"https://drchrono.com/api/appointments",
@@ -110,12 +110,7 @@ var requestHandler = {
       });
   },
   refreshToken:function(callback){
-    var oauth = {
-      'refresh_token': auth.refresh_token,
-      'grant_type': 'refresh_token',
-      'client_id': 'BYMiBnq7uAKNRzskEMLRQSHh4AhdjwzQT4goEimf',
-      'client_secret': 'u8fRapfWZIcD4eZcf5NVEM9pWlRrU3Xl2v1yFxNVGdFHKOeldjwoncfxuyA220zQa1qTJKYK5byer9CQBjxHNROCyZNyeRMre3QxJitQh3Cg5A9Bp6lyFBoRGktIubyx',
-    };
+    
     var options = {
     url:urls.token,
     headers:'Bearer ' + auth.headers,
@@ -129,13 +124,7 @@ var requestHandler = {
     });
   },
   token:function(req, res){
-    var oauth = {
-      'code':req.body.code,
-      'grant_type':'authorization_code',
-      'redirect_uri':'http://localhost:7000',
-      'client_id':'BYMiBnq7uAKNRzskEMLRQSHh4AhdjwzQT4goEimf',
-      'client_secret': 'u8fRapfWZIcD4eZcf5NVEM9pWlRrU3Xl2v1yFxNVGdFHKOeldjwoncfxuyA220zQa1qTJKYK5byer9CQBjxHNROCyZNyeRMre3QxJitQh3Cg5A9Bp6lyFBoRGktIubyx'
-    };
+    
     var options = {
     url:urls.token,
     headers:headers,
