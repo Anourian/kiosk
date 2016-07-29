@@ -1,4 +1,4 @@
-#badCodeApp
+#kiosk app
 
 ##What is this?
 
