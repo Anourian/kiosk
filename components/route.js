@@ -1,0 +1,54 @@
+(function(){
+  angular.module('kiosk')
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise('/')
+    $stateProvider
+    .state('home',{
+      url:'/',
+      templateUrl:'components/home/home.html',
+      controller:'homeController',
+      controllerAs:'home'
+    })
+    .state('dashboard',{
+      url:'/dashboard',
+      templateUrl:'components/dashboard/dashboard.html',
+      controller:'dashboardController',      
+      controllerAs:'dashboard',
+      abstract:true
+    })    
+    .state('dashboard.create',{
+      parent:'dashboard',
+      url:'',
+      templateUrl:'components/dashboard/create/create.html',
+      controller:'createController',
+      controllerAs:'create'
+    })
+    .state('dashboard.confirm',{
+      parent:'dashboard',
+      url:'/confirm',
+      templateUrl:'components/dashboard/confirm/confirm.html',
+      controller:'confirmController',
+      controllerAs:'confirm'
+    })
+    .state('dashboard.info',{
+      parent:'dashboard',
+      url:'/info',
+      templateUrl:'components/dashboard/info/info.html',
+      controller:'infoController',
+      controllerAs:'info'
+    })
+    .state('newpatient',{
+      url:'/newpatient',
+      templateUrl:'components/new/newpatient.html',
+      controller:'newpatientController',
+      controllerAs:'new'
+    })
+    .state('exit',{
+      url:'/thanks',
+      templateUrl:'components/exit/thanks.html',
+      controller:'exitController',
+      controllerAs:'exit'
+    })
+
+  }]);
+})();

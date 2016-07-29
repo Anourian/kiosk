@@ -1,0 +1,23 @@
+<div>
+  <div class="text-center" ng-if='confirm.appointments.count === 0'>
+    <h2>There were no appointments found for you within the next 6 months</h2>
+    <h3>Would you like to make an appointment?</h3>
+    <div>
+      <a ui-sref='dashboard.create' class='btn btn-primary'>Create Appointment</a>      
+    </div>
+  </div>
+  <div ng-if='confirm.appointments.count > 0'>
+    <h2>Displaying your future appointments</h2>
+    <div ng-repeat='appointment in confirm.appointments.results track by $index'>
+    <div class="row">
+      <div class="col-sm-6">
+        Date: {{appointment.scheduled_time | date:'MM/dd/yyyy'}} Duration (In Minutes) :{{appointment.duration}} 
+      </div>
+      <div class="col-sm-6">
+        <span ng-if="appointment.status === 'Confirmed'">Confirmed</span>        
+      <a ng-if="appointment.status !== 'Confirmed'" ng-click='confirm.confirm($index)'>Confirm Appointment</a>
+      </div>      
+    </div>
+    </div>
+  </div>
+</div>

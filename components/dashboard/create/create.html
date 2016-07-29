@@ -1,0 +1,61 @@
+<div>
+  <h2>You may schedule an appointment up to 6 months in advance.</h2>
+   <div class="inline" uib-datepicker ng-model="create.appointmentDate" datepicker-options="create.appointmentOptions" ng-click="create.getSchedule(create.appointmentDate)">{{vm.test}}</div>
+   <div>
+   <h4 class='text-center'>Current Selected Date: {{create.appointmentDate | date: MM-DD-YYYY: PDT}}</h4>
+   </div>
+   <div class='appointmentView'>
+     <div ng-if='create.scheduled.length > 0' class='col-sm-6'>
+      Appointments for this date:
+      <ul>
+        <li ng-repeat='appointment in create.scheduled track by $index'><strong>{{$index + 1}}. </strong> {{appointment}}</li>
+      </ul>     
+     </div>
+     <div class='col-sm-6'>
+       <form name='newAppointment' ng-submit="create.create()">
+        <legend class='hidden'></legend>
+         <h4>Fill out information below to create appointment.</h4>
+         <p>*Time must not conflict</p>
+         <fieldset>
+            <div class='row'>
+              <div class='form-group col-sm-5'>              
+               <label for='hour'>Hour</label>
+               <select id='hour' ng-model='create.new.hour' class='form-control' ng-options='hour for hour in create.time.hours' ng-required="true" ng-init='create.new.hour = options[0].value'>
+                 <option></option>
+               </select>           
+             </div>
+             <div class='form-group col-sm-5'>
+               <label for='minutes'>Minutes</label>
+               <select ng-model='create.new.minutes' id='minutes' ng-options="minute for minute in create.time.minutes" ng-required="true" class='form-control' required ng-init='create.new.minutes = options[0].value'>
+                <option></option>                 
+               </select>           
+             </div>
+             <div class='form-group col-sm-2'>
+               <label for='duration'>Duration</label>
+               <input type="number" minLength='1' ng-required="true" class='form-control' max='60' name="duration" ng-model='create.new.duration' id='duration' required>
+               <small>In minutes</small>         
+             </div>
+            </div>
+           
+
+           <div class='form-group'>
+             <label for='reason'>Reason for appointment</label>
+             <textarea ng-model='create.new.reason' ng-required="true" id='reason' class='form-control' rows="4" required>               
+             </textarea>  
+           </div>
+           <div class='alert alert-info'>
+            <h4>New Appointment:</h4>
+            <p>{{create.appointmentDate | date: MM-DD-YYYY}} at {{create.new.hour}}:{{create.new.minutes}}:00 for {{create.new.duration}} minutes.</p>
+            Reason:{{create.new.reason}}            
+           </div>
+           <div class="alert alert-warning" ng-if='create.error.length > 0'>
+             <p>{{create.error}}</p>
+           </div>
+           <div>
+             <button type="submit" class='btn btn-primary'>Create Appointment</button>
+           </div>
+         </fieldset>
+        </form>
+      </div>    
+   </div>   
+</div>

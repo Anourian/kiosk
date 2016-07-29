@@ -1,0 +1,38 @@
+<div class="intro text-center">
+  <div class="hello" ng-class="{'active':home.selected}">
+   Hello, welcome to Lotus Home Health. <br>
+   What would you like to do today?
+   <div class="action">
+    <a href="#" class="" ng-click="home.path('dashboard.confirm')">Confirm an appointment</a> or 
+    <a href="#" class="" ng-click="home.path('dashboard.create')">Make an appointment</a>
+  </div>
+  </div>
+<div class='morph-content'>
+<form ng-show='home.selected' ng-submit="home.login(home.firstname, home.lastname, home.dob)" class='col-sm-12'>
+    <legend class='hidden'>Sign in form</legend>
+    <fieldset>
+      <div class='form-group'>
+        <label for='firstname'>First Name</label>
+        <input type="text" name="firstname" id='firstname' ng-required='true' class='form-control' ng-model='home.firstname'>      
+      </div>
+      <div class='form-group'>
+        <label for='lastname'>Last Name</label>
+        <input type="text" name="lastname" id='lastname' ng-required='true' class='form-control' ng-model='home.lastname'>      
+      </div>
+      <div class='form-group'>
+        <label for='dob'>Date of Birth month/day/year</label>
+        <input type="text" name="dob" id='dob' class='form-control' ng-required='true' ng-model='home.dob' ui-mask="99/99/9999" model-view-value="true">
+      </div>
+    </fieldset>
+    <div class='text-right'>
+      <button type='submit' class='btn btn-primary'>Login</a>
+    </div>
+    <div class='alert alert-danger' ng-if='home.error.length > 0'>
+        {{home.error}}      
+    </div>
+    <div class='text-center' ng-if='home.create'>
+      <a ui-sref='newpatient'>Create Account</a>
+    </div>    
+  </form>
+</div>
+</div>

@@ -1,0 +1,35 @@
+<div>
+  <h2 class='text-center'>Please fill out the fields below to get started</h2>
+  <form ng-submit='new.create(new.patient)' class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+    <legend class="hidden">Please fill out the fields below to get started</legend>
+    <p>*All fields are required</p>
+    <fieldset>
+      <div class='form-group'>
+        <label for='firstname'>First Name</label>
+        <input type="text" name="firstname" id='firstname' class='form-control' ng-model='new.patient.firstname'/>
+      </div>
+      <div class='form-group'>
+        <label for='lastname'>Last Name</label>
+        <input type="text" name="lastname" id='lastname' class='form-control' ng-model='new.patient.lastname'/>
+      </div>
+      <div class='form-group'>
+        <label for='dob'>Date of Birth (month, day, year)</label>
+        <input type="text" name="dob" id='dob' class='form-control' ng-model='new.patient.dob' ui-mask="99/99/9999" model-view-value="true"/>
+      </div>
+      <div class='form-group'>
+        <label for='gender'>Gender</label>
+        <select ng-model='new.patient.gender'>
+          <option value='Female'>Female</option>
+          <option value='Male'>Male</option>        
+          <option value='Other'>Other</option>
+        </select>
+      </div>
+      <div>
+        <button class='btn btn-primary' type='submit'>Submit</button>
+      </div>
+      <div class='alert alert-danger' ng-if="new.error.length > 0">
+        {{new.error}}
+      </div>
+    </fieldset>
+  </form>
+</div>

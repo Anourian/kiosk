@@ -1,0 +1,185 @@
+html {
+	height: 100%;
+}
+body {
+	background: rgba(206, 228, 232, 0.84);
+	font-family: 'Muli', sans-serif;
+	height: inherit;
+}
+.container {
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+}
+.site-wrapper,
+.container-fluid,
+.container-fluid > .ng-scope {
+	height: inherit;
+}
+/*My stuff*/
+.right-panel {
+	background: rgb(247, 246, 244);
+	height: inherit;
+}
+.right-panel label {
+	font-family: 'Muli', sans-serif;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+}
+.right-panel .form-control {
+	height: 35px;
+    background: #f7f5f1;
+    font-size: 20px;
+    font-family: 'Muli', sans-serif;
+}
+
+
+.left-panel {
+	height: inherit;
+}
+
+.left-panel ul {
+	list-style: none;
+    padding: 20px 0;
+}
+
+.left-panel ul li {
+    border-bottom: 1px solid #fff;
+}
+
+.left-panel ul li a {
+	width: 100%;
+    color: #4a1805;
+    height: inherit;
+    display: inline-block;
+    padding: 10px;
+}
+
+.left-panel ul li a:hover {
+	background: rgb(198, 222, 226);
+    color: #4a1805;
+    text-decoration: none;
+}
+
+.welcome {
+	padding: 20px 10px 0;
+    font: italic 400 30px/40px "Gentium Book Basic", serif;
+}
+
+.container-fluid {
+	padding-right: 0;
+	padding-left: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+.intro {
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 25vh;
+    font: italic 400 30px/40px "Gentium Book Basic", serif;
+    color: #553445;
+    text-shadow: -2px 1px 2px rgba(4, 75, 88, 0.18);
+}
+
+button.btn.btn-default.btn-sm {
+    padding: 10px 40px;
+    border: 0;
+}
+button.btn.btn-default.btn-sm.btn-info.active {
+    background: #b0d8de;
+    box-shadow: none;
+}
+
+table {
+	margin: 0 auto;
+}
+th {
+	padding: 10px;
+}
+
+.intro a,
+.right-panel .btn-primary {
+	color: #24a3bb;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 2px solid rgba(0, 113, 136, 0.53);
+    border-radius: 4px;
+    margin: 10px;
+    font-family: 'Muli', sans-serif;
+    text-decoration: none;
+    transition: .5s;
+    background: #f7f3eb;;
+}
+.intro a:hover,
+.intro a:focus,
+.intro a:active,
+.right-panel .btn-primary:hover,
+.right-panel .btn-primary:active,
+.right-panel .btn-primary:focus {
+    color: #693f0a;
+    text-decoration: none;
+    border-color: #ffffff;
+    background: rgba(250, 241, 224, 0.7);
+    box-shadow: 1px 2px 3px rgba(11, 152, 181, 0.35);
+}
+.hello {
+	transition: margin-top 1.5s ease;
+}
+.hello.active {
+	margin-top: -490px;
+}
+
+
+label {
+	font-family: 'Muli', sans-serif;
+	width: 100%;
+	text-align: left;
+    font-size: 22px;
+}
+.form-control {
+	height: 50px;
+	background: #fdf8ee;
+	font-size: 20px;
+	font-family: 'Muli', sans-serif;
+}
+
+.morph-content {
+	margin-top: 130px;
+}
+.nav-container {
+    margin: 0 30px;
+}
+
+a {
+    color: #12a9c1;
+    cursor: pointer;
+}
+a:hover {
+    color: #078da2;
+    cursor: pointer;
+}
+
+
+.navbar-fixed-top {
+    position: absolute;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgb(247, 243, 235);
+}
+.action {
+    margin: 50px 0;
+    text-align: center;
+    color: #00829c;
+    font: italic 20px/40px "Gentium Book Basic", serif;
+}
+
+.btn-confirm {   
+    background-color: #40b1e8;    
+}
+.btn-confirm, .btn-create {
+	color: #fff;
+    font-size: 1.5em;
+    padding: 15px 30px;
+}
+.btn-create {
+	background-color: #93d053;
+}

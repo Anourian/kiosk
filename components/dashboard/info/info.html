@@ -1,0 +1,50 @@
+<div>
+  <h2 class="text-center">Edit your information below</h2>
+  <form class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+    <legend class='hidden'>Edit your information below</legend>
+    <fieldset>
+      <div class='form-group'>
+        <label for='number'>Phone Number</label>
+        <input type="text" name="number" ng-required="true" class="form-control" ng-model='info.edit.cell_phone'>        
+      </div>
+      <div class='form-group'>
+        <label for='email'>Email</label>
+        <input type="text" name="email" ng-required="true" class="form-control" ng-model='info.edit.email'>        
+      </div>
+      <div class='form-group'>
+        <label for='address'>Address</label>
+        <input type="text" name="address" ng-required="true" class="form-control" ng-model='info.edit.address'>        
+      </div>
+      <div class='form-group'>
+        <label for='city'>City</label>
+        <input type="text" name="city" ng-required="true" class="form-control" ng-model='info.edit.city'>        
+      </div>
+      <div class='form-group'>
+        <label for='state'>state</label>
+        <input type="text" name="state" ng-required="true" class="form-control" ng-model='info.edit.state'>        
+      </div>
+      <div class='form-group'>
+        <label for='zip'>Zip Code</label>
+        <input type="text" name="zip" ng-required="true" class="form-control" ng-model='info.edit.zip_code'>        
+      </div>
+      <div class='form-group'>
+        <label for='emergency'>Emergency contact name</label>
+        <input type="text" name="emergency" ng-required="true" class="form-control" ng-model='info.edit.emergency_contact_name'>        
+      </div>
+      <div class='form-group'>
+        <label for='emergencyphone'>Emergency contact phone</label>
+        <input type="text" name="emergencyphone" ng-required="true" class="form-control" ng-model='info.edit.emergency_contact_phone'>        
+      </div>
+      <div class='clearfix'>
+        <button class='btn btn-primary pull-right' ng-click='info.updateUser(info.edit)'>Update Info</button>
+      </div>
+      <div class="alert alert-success" ng-if="info.success.length > 0">
+        {{info.success}}
+      </div>
+      <div class="alert alert-danger" ng-if="info.error.length > 0">
+        {{info.error}}
+      </div>
+
+    </fieldset>
+  </form>
+</div>

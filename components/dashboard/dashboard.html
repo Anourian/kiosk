@@ -1,0 +1,16 @@
+<div>
+  <div class="col-sm-3 left-panel">
+  <div class="welcome">
+  	Hello {{dashboard.user.first_name}}!
+  </div>
+    <ul>
+    	<li><a ui-sref="dashboard.create">Create an appointment</a></li>
+    	<li><a ui-sref="dashboard.confirm">Confirm an appointment</a></li>
+    	<li><a ui-sref="dashboard.info">Edit your information</a></li>
+    	<li><a href="" ng-click="dashboard.exit()">Sign Out</a></li>
+    </ul>
+  </div>
+  <div ui-view class="col-sm-9 right-panel">
+    
+  </div>
+</div>
